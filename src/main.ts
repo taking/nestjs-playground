@@ -6,14 +6,19 @@ import {
   FastifyAdapter,
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
+import { HttpExceptionFilter } from './filters/http-exception.filter'
 
 async function bootstrap() {
-  const appOptions = {cors: true};
+  const appOptions = {
+    cors: true,
+    logger: true,
+  };
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
-    new FastifyAdapter({ logger: true }),
+    new FastifyAdapter(appOptions),
   );
   app.setGlobalPrefix('api');
+  app.useGlobalFilters(new HttpExceptionFilter());
 
   // whiteList -> 엔티티 데코레이터에 없는 프로퍼티 값은 무조건 거름
   // forbidNonWhitelisted -> 엔티티 데코레이터에 없는 값 인입시 그 값에 대한 에러메세지 알려줌
@@ -27,8 +32,8 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('NestJS Realworld Example App')
-    .setDescription('The Realworld API description')
+    .setTitle('NestJS PlayGround App')
+    .setDescription('by taking (taking@duck.com)')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);
