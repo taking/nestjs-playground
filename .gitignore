@@ -17,6 +17,7 @@ lerna-debug.log*
 # Tests
 /coverage
 /.nyc_output
+/test
 
 # IDEs and editors
 /.idea
@@ -33,3 +34,9 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# Environment Files
+.env
+
+# Test
+*.lockb
