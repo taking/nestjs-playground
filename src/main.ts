@@ -1,22 +1,23 @@
 import { ValidationPipe } from "@nestjs/common";
+import { AppConfig } from '@config/configuration';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from '@root/app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import {
   FastifyAdapter,
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
-import { HttpExceptionFilter } from './filters/http-exception.filter'
+import { HttpExceptionFilter } from '@exceptions/http-exception.filter'
 
 async function bootstrap() {
   const appOptions = {
-    cors: true,
     logger: true,
   };
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter(appOptions),
   );
+  app.enableCors();
   app.setGlobalPrefix('api');
   app.useGlobalFilters(new HttpExceptionFilter());
 
@@ -38,8 +39,12 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/docs', app, document);  
+
+  const appConfig = AppConfig().app;
+  const host = appConfig.host;
+  const port = appConfig.port;
   
-  await app.listen(3000, '0.0.0.0');
-  console.log(`Application is running on: ${await app.getUrl()}`);
+  await app.listen(port, host);
+  console.log(`Application is running on: ${host}:${port}`);
 }
 bootstrap();

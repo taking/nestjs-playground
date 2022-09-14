@@ -16,6 +16,13 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@root/*": ["./src/*"],
+      "@config/*": ["./src/config/*"],
+      "@exceptions/*": ["./src/shared/exceptions/*"],
+      "@hello/*": ["./src/hello/*"],
+      "@users/*": ["./src/users/*"]
+    }
   }
 }
