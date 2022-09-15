@@ -1,10 +1,22 @@
 # NestJS PlayGround
 
+- [NestJS PlayGround](https://github.com/taking/nestjs-playground/) *(2022.09.14 ~)*
+    - Backend
+        - NoSQL(MongoDB) API 설계 및 개발
+        - Node + NestJS 프레임워크 기반 GraphQL/gRPC 서버 개발
+          - mongoDB CRUD
+    - Frontend
+        - Not Yet
+
+
 ## Stack
 - [NestJS](https://nestjs.com/)
+- [Fastify](https://www.fastify.io/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [TypeORM](https://docs.nestjs.com/recipes/sql-typeorm)
-- [Bun](https://bun.sh/)
+- [GraphQL](https://graphql.org/)
+- [Mercurius](https://mercurius.dev/)
+- [MongoDB](https://www.mongodb.com/ko-kr)
+- [RxJS](https://rxjs.dev/)
 
 ## Confer
 - [[NestJs] NestJs란?](https://koras02.tistory.com/234)
@@ -12,8 +24,8 @@
 - [nextjs-crud-example](https://github.com/monikaja/nestjs-crud-example)
 
 ## Description
-
-- ""
+- 추후 NestJS를 활용하여 프로젝트를 진행 시, 사용할 NestJS PlayGround이다.
+- yarn 대신 [bun](https://bun.sh/)을 사용한다.
 
 ## Installation
 
