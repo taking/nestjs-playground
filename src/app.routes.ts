@@ -1,6 +1,6 @@
 import { Routes } from '@nestjs/core';
-import { HelloModule } from '@hello/hello.module';
-import { UsersModule } from '@users/users.module';
+import { HelloModule } from '@resources/hello/hello.module';
+import { UsersModule } from '@resources/users/users.module';
 
 export const AppRoutes : Routes = [
   {
@@ -12,5 +12,3 @@ export const AppRoutes : Routes = [
     module: UsersModule,
   },
 ];
-
-// export const routes: Routes = routes;

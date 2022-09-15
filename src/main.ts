@@ -7,7 +7,7 @@ import {
   FastifyAdapter,
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
-import { HttpExceptionFilter } from '@exceptions/http-exception.filter'
+import { HttpExceptionFilter } from '@common/exceptions/http-exception.filter'
 
 async function bootstrap() {
   const appOptions = {

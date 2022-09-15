@@ -20,9 +20,9 @@
     "paths": {
       "@root/*": ["./src/*"],
       "@config/*": ["./src/config/*"],
-      "@exceptions/*": ["./src/shared/exceptions/*"],
-      "@hello/*": ["./src/hello/*"],
-      "@users/*": ["./src/users/*"]
+      "@database/*": ["./src/db/*"],
+      "@common/*": ["./src/common/*"],
+      "@resources/*": ["./src/resources/*"],
     }
   }
 }
